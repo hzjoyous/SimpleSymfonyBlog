@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="database" uuid="63e5b030-7508-41c1-8ae3-29cd32ab791f">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\WorkSpace\hzj\blog.useSymfony\data\database.sqlite</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="database_test" uuid="b92c9c19-3186-41be-a233-1b209a48579c">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\WorkSpace\hzj\blog.useSymfony\data\database_test.sqlite</jdbc-url>
+    </data-source>
+  </component>
+</project>
