@@ -10,5 +10,234 @@
     <collation id="3" parent="1" name="BINARY"/>
     <collation id="4" parent="1" name="NOCASE"/>
     <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="7" parent="2" name="symfony_demo_comment"/>
+    <table id="8" parent="2" name="symfony_demo_post"/>
+    <table id="9" parent="2" name="symfony_demo_post_tag"/>
+    <table id="10" parent="2" name="symfony_demo_tag"/>
+    <table id="11" parent="2" name="symfony_demo_user"/>
+    <column id="12" parent="6" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="13" parent="6" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="14" parent="6" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="15" parent="6" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="16" parent="6" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="17" parent="7" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="7" name="post_id">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="7" name="author_id">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="7" name="content">
+      <Position>4</Position>
+      <DataType>CLOB|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="7" name="published_at">
+      <Position>5</Position>
+      <DataType>DATETIME|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="22" parent="7" name="IDX_53AD8F834B89032C">
+      <ColNames>post_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="23" parent="7" name="IDX_53AD8F83F675F31B">
+      <ColNames>author_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="24" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="25" parent="7" name="FK_53AD8F834B89032C">
+      <ColNames>post_id</ColNames>
+      <RefTableName>symfony_demo_post</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="26" parent="7" name="FK_53AD8F83F675F31B">
+      <ColNames>author_id</ColNames>
+      <RefTableName>symfony_demo_user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="27" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="8" name="author_id">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="8" name="title">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="8" name="slug">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="8" name="summary">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="8" name="content">
+      <Position>6</Position>
+      <DataType>CLOB|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="8" name="published_at">
+      <Position>7</Position>
+      <DataType>DATETIME|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="34" parent="8" name="IDX_58A92E65F675F31B">
+      <ColNames>author_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="35" parent="8">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="36" parent="8" name="FK_58A92E65F675F31B">
+      <ColNames>author_id</ColNames>
+      <RefTableName>symfony_demo_user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="37" parent="9" name="post_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="9" name="tag_id">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="39" parent="9" name="sqlite_autoindex_symfony_demo_post_tag_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>post_id
+tag_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="40" parent="9" name="IDX_6ABC1CC44B89032C">
+      <ColNames>post_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="41" parent="9" name="IDX_6ABC1CC4BAD26311">
+      <ColNames>tag_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="42" parent="9">
+      <ColNames>post_id
+tag_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_symfony_demo_post_tag_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="43" parent="9" name="FK_6ABC1CC44B89032C">
+      <ColNames>post_id</ColNames>
+      <RefTableName>symfony_demo_post</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="44" parent="9" name="FK_6ABC1CC4BAD26311">
+      <ColNames>tag_id</ColNames>
+      <RefTableName>symfony_demo_tag</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="45" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="47" parent="10" name="UNIQ_4D5855405E237E06">
+      <ColNames>name</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="48" parent="10">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="49" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="11" name="full_name">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="11" name="username">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="11" name="email">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="11" name="password">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="11" name="roles">
+      <Position>6</Position>
+      <DataType>CLOB|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="55" parent="11" name="UNIQ_8FB094A1F85E0677">
+      <ColNames>username</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="56" parent="11" name="UNIQ_8FB094A1E7927C74">
+      <ColNames>email</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="11">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
